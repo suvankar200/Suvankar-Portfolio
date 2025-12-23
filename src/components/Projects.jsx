@@ -15,7 +15,7 @@ const Projects = () => {
       description: "Intelligent sensing system mimicking human taste detection using AI and chemical sensors",
       fullDescription: "The Electronic Tongue (E-Tongue) is an intelligent sensing system designed to mimic the human tongue's ability to detect and differentiate tastes using advanced sensor technology and pattern recognition algorithms. The system consists of an array of non-specific, cross-sensitive chemical sensors combined with machine learning models to analyze liquid samples and classify taste profiles such as sweet, sour, salty, bitter, and umami. This technology finds applications in food quality control, beverage authentication, pharmaceutical formulation testing, and environmental monitoring.",
       tech: ["Python", "Machine Learning", "Chemical Sensors", "Pattern Recognition", "IoT"],
-      live: "/E Tongue.mp4",
+      live: "/E-Tongue.mp4",
       isVideo: true,
       color: "from-cyan-600 to-blue-700",
     },

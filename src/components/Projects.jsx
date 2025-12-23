@@ -15,8 +15,9 @@ const Projects = () => {
       description: "Intelligent sensing system mimicking human taste detection using AI and chemical sensors",
       fullDescription: "The Electronic Tongue (E-Tongue) is an intelligent sensing system designed to mimic the human tongue's ability to detect and differentiate tastes using advanced sensor technology and pattern recognition algorithms. The system consists of an array of non-specific, cross-sensitive chemical sensors combined with machine learning models to analyze liquid samples and classify taste profiles such as sweet, sour, salty, bitter, and umami. This technology finds applications in food quality control, beverage authentication, pharmaceutical formulation testing, and environmental monitoring.",
       tech: ["Python", "Machine Learning", "Chemical Sensors", "Pattern Recognition", "IoT"],
-      live: "https://drive.google.com/uc?export=download&id=14JNSrafEydMtt56Y7c85_axSDzcO6cu1",
+      live: "https://drive.google.com/file/d/14JNSrafEydMtt56Y7c85_axSDzcO6cu1/preview",
       isVideo: true,
+      isGoogleDrive: true,
       color: "from-cyan-600 to-blue-700",
     },
     {
@@ -25,8 +26,9 @@ const Projects = () => {
       description: "AI-powered agricultural automation system integrating drone and bot technologies",
       fullDescription: "AgriDrive is a comprehensive agricultural automation system that integrates drone and bot technologies to analyze plant health and automate irrigation. The system uses computer vision and machine learning to detect diseases and optimize water usage.",
       tech: ["Python", "TensorFlow", "Raspberry Pi", "OpenCV", "React.js"],
-      live: "https://drive.google.com/uc?export=download&id=1D2BhxDbeY0g6ua3fXIo9ePSugMmMmLw1",
+      live: "https://drive.google.com/file/d/1D2BhxDbeY0g6ua3fXIo9ePSugMmMmLw1/preview",
       isVideo: true,
+      isGoogleDrive: true,
       color: "from-emerald-600 to-green-700",
     },
     {
@@ -35,8 +37,9 @@ const Projects = () => {
       description: "Drone system measuring Evapotranspiration using environmental data",
       fullDescription: "Advanced drone system that measures Evapotranspiration using real-time environmental data for smart irrigation. Helps farmers optimize water usage and improve crop yields through data-driven decisions.",
       tech: ["DroneKit", "Python", "IoT Sensors"],
-      live: "https://drive.google.com/uc?export=download&id=1aqAdYO7DKxa7FANujitJYQnZpzbgm2f_",
+      live: "https://drive.google.com/file/d/1aqAdYO7DKxa7FANujitJYQnZpzbgm2f_/preview",
       isVideo: true,
+      isGoogleDrive: true,
       color: "from-sky-600 to-blue-700",
     },
     {
@@ -188,14 +191,23 @@ const Projects = () => {
               {/* Video Player */}
               {projects[selectedProject].isVideo && projects[selectedProject].live && (
                 <div className="relative bg-black rounded-lg overflow-hidden aspect-video shadow-2xl">
-                  <video 
-                    controls 
-                    className="w-full h-full"
-                    poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect fill='%23000' width='800' height='450'/%3E%3C/svg%3E"
-                  >
-                    <source src={projects[selectedProject].live} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                  {projects[selectedProject].isGoogleDrive ? (
+                    <iframe 
+                      src={projects[selectedProject].live}
+                      className="w-full h-full"
+                      allow="autoplay"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <video 
+                      controls 
+                      className="w-full h-full"
+                      poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect fill='%23000' width='800' height='450'/%3E%3C/svg%3E"
+                    >
+                      <source src={projects[selectedProject].live} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  )}
                 </div>
               )}
               

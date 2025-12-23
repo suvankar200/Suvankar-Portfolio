@@ -31,14 +31,20 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/98 backdrop-blur-md shadow-lg border-b border-border/50" : "bg-transparent"
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled 
+          ? "bg-background/80 backdrop-blur-xl shadow-lg shadow-primary/5 border-b border-primary/20" 
+          : "bg-transparent backdrop-blur-sm"
       }`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-2xl font-bold text-foreground hover:text-primary transition-colors">
-            Suvankar<span className="text-primary">.</span>
+          <a 
+            href="#home" 
+            className="text-2xl font-bold text-foreground hover:text-primary transition-all duration-300 hover:scale-105 group"
+          >
+            Suvankar
+            <span className="text-primary group-hover:animate-pulse">.</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -47,10 +53,10 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative group"
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-300 relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-blue-500 transition-all duration-300 group-hover:w-full shadow-lg shadow-primary/50" />
               </a>
             ))}
           </div>
@@ -63,7 +69,7 @@ const Header = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-primary transition-colors"
+                className="text-foreground/60 hover:text-primary transition-all duration-300 hover:scale-110 hover:rotate-6"
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />
